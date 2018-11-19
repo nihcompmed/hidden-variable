@@ -1,2 +1,0 @@
-# hidden-variable
-Hidden variables
