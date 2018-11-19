@@ -6,7 +6,7 @@
    "source": [
     "# Results\n",
     "\n",
-    "[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/danhtaihoang/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb)\n",
+    "[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/nihcompmed/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb)\n",
     "\n",
     "We demonstrade in the following the performance of our method in analyzing binary data that is generated from the kinetic Ising model. Using configurations of a subset of variables, we will recover the interactions (including observed to observed, hidden to observed, observed to hidden, and hidden to hidden), the configurations of hidden variables, and the number of hidden variables.\n",
     "\n",
