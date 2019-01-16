@@ -8,7 +8,7 @@
     "\n",
     "[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/nihcompmed/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb)\n",
     "\n",
-    "In this section, we compare the performance of Free Energy Minimization (FEM) method with other existing methods based on mean field approximations and Maximum Likelihood Estimation (MLE). We will see that FEM produces a higher accuracy than other methods. Additionally, FEM works much faster than MLE.\n",
+    "In this section, we compare the performance of Free Energy Minimization (FEM) method with other existing methods based on mean field approximations and Maximum Likelihood Estimation (MLE). We shall show that FEM is more accurate than other methods. Additionally, FEM is computationally much faster than MLE.\n",
     "\n",
     "First of all, we import the necessary packages to the jupyter notebook:"
    ]
@@ -76,7 +76,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We use a number of hidden variables as its actual value."
+    "Suppose first that we know the number of hidden variables so we set `nh` to its actual value."
    ]
   },
   {
@@ -353,7 +353,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "From the above results, we conclude that FEM outperforms other existing methods. Beside the better performance, FEM works much faster than MLE. For instance, to solve the same problem, FEM takes only 515 seconds, however, MLE takes 9970 seconds."
+    "From the above results, we conclude that FEM outperforms other existing methods. Beside more accurate inference, FEM works much faster than MLE. For instance, to solve the same problem, FEM took only 515 seconds, however, MLE took 9970 seconds."
    ]
   },
   {

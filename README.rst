@@ -24,4 +24,4 @@ Code Source
 
 Reference
 ----------------------------
-Danh-Tai Hoang, Junghyo Jo and Vipul Periwal, "Model Inference with Hidden Variables" (in preparation).
+Danh-Tai Hoang, Junghyo Jo and Vipul Periwal, "Data-driven inference of hidden nodes in networks" (in preparation).

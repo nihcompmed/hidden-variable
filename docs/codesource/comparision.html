@@ -274,9 +274,9 @@ div.nboutput div.output_area.stderr {
 <p><a class="reference external" href="https://mybinder.org/v2/gh/nihcompmed/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb"><img alt="Binder" src="https://mybinder.org/badge.svg" /></a></p>
 <p>In this section, we compare the performance of Free Energy Minimization
 (FEM) method with other existing methods based on mean field
-approximations and Maximum Likelihood Estimation (MLE). We will see that
-FEM produces a higher accuracy than other methods. Additionally, FEM
-works much faster than MLE.</p>
+approximations and Maximum Likelihood Estimation (MLE). We shall show
+that FEM is more accurate than other methods. Additionally, FEM is
+computationally much faster than MLE.</p>
 <p>First of all, we import the necessary packages to the jupyter notebook:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -329,7 +329,8 @@ works much faster than MLE.</p>
 </pre></div>
 </div>
 </div>
-<p>We use a number of hidden variables as its actual value.</p>
+<p>Suppose first that we know the number of hidden variables so we set
+<code class="docutils literal notranslate"><span class="pre">nh</span></code> to its actual value.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
@@ -565,9 +566,9 @@ FEM:
 </div>
 </div>
 <p>From the above results, we conclude that FEM outperforms other existing
-methods. Beside the better performance, FEM works much faster than MLE.
-For instance, to solve the same problem, FEM takes only 515 seconds,
-however, MLE takes 9970 seconds.</p>
+methods. Beside more accurate inference, FEM works much faster than MLE.
+For instance, to solve the same problem, FEM took only 515 seconds,
+however, MLE took 9970 seconds.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
