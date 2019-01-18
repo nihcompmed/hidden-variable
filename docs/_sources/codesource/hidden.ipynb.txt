@@ -8,7 +8,7 @@
     "\n",
     "[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/nihcompmed/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb)\n",
     "\n",
-    "We demonstrade in the following the performance of our method in analyzing binary data that is generated from the kinetic Ising model. Using configurations of a subset of variables, we will recover the interactions (including observed to observed, hidden to observed, observed to hidden, and hidden to hidden), the configurations of hidden variables, and the number of hidden variables.\n",
+    "We demonstrate the performance of our method in analyzing binary data generated from the kinetic Ising model simulations in the following. Using configurations of a subset of variables, we will recover the interactions (including observed to observed, hidden to observed, observed to hidden, and hidden to hidden), the configurations of hidden variables, and the number of hidden variables.\n",
     "\n",
     "First of all, we import the necessary packages to the jupyter notebook:"
    ]
@@ -121,7 +121,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We plot the heat map of the actual interaction matrix `w0`, the inferred interaction matrix `w`, and the error inference, i.e., the discrepancy between `w0` and `w`."
+    "We plot the heat map of the actual interaction matrix `w0`, the inferred interaction matrix `w`, and the error in inference, i.e., the discrepancy between `w0` and `w`."
    ]
   },
   {
@@ -184,7 +184,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "However, in the real world data, it is likely that we do not observe the configurations of entire system, but only a subset of variables. For instance, there exists `nh0` hidden variables. So that, the number of observed variables is `n = n0 - nh0` and the observed configurations is `s = s0[:,:n]`."
+    "However, in the real world, it is likely that we do not observe the entire system, but only a subset of variables. For instance, suppose that there are `nh0` hidden variables, so the number of observed variables is `n = n0 - nh0` and the observed configurations are `s = s0[:,:n]`."
    ]
   },
   {
@@ -209,7 +209,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Let us see what happen if we ignore the existence of hidden variables and infer the interactions between the observations. Using the observed configurations `s`, we can infer the interactions between the observed variables:"
+    "Let us see what happen if we ignore the existence of hidden variables and infer the interactions between the observed variables. Using observed configurations `s`, we can try to infer interactions between the observed variables:"
    ]
   },
   {
@@ -295,9 +295,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "As expected, ignoring hidden variables leads to a poor inferred result.\n",
+    "As expected, ignoring hidden variables leads to poor coupling inference.\n",
     "\n",
-    "In the following, we will take into account the existance of hidden variables."
+    "In the following, we will take into account the existence of hidden variables."
    ]
   },
   {
@@ -307,7 +307,7 @@
     "## Including hidden variables\n",
     "### Inferring interactions\n",
     "\n",
-    "We first assume that the number of hidden variables is known, `nh = nh0`. The interactions is then inferred by using  the function `inference.infer_hidden`."
+    "We first assume that the number of hidden variables is known, `nh = nh0`. The interactions are then inferred by using  the function `inference.infer_hidden`."
    ]
   },
   {
@@ -460,7 +460,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "So we can infer accurately the interactions, not only observed to observed, but also hidden to observed, observed to hidden, and hidden to hidden."
+    "So our method infers the interactions accurately, not only observed to observed, but also hidden to observed, observed to hidden, and hidden to hidden."
    ]
   },
   {
@@ -474,7 +474,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Our algorithm allows us to infer the configurations of hidden variables simultaneously with the interactions in the previous step. The acurracy of the inference is calculated as  "
+    "Our algorithm allows us to infer the configurations of hidden variables simultaneously with the interactions in the previous step. The accuracy of the inference is calculated as  "
    ]
   },
   {
@@ -501,7 +501,7 @@
    "source": [
     "### Inferring number of hidden variables\n",
     "\n",
-    "In the above sections, we recovered the interactions and configurations of hidden variables by using the right number of hidden variables, `nh= nh0`. However, in the real world problems, the number of hidden variables may not be accessible. In the following, we apply our method for various number of hidden variables `nh` and compute the discrepancies of observed variables `cost_obs` and entire system `cost`. "
+    "In the above sections, we recovered the interactions and configurations of hidden variables by using the right number of hidden variables, `nh= nh0`. However, in the real world, the number of hidden variables may not be available. In the following, we apply our method for various number of hidden variables `nh` and compute the discrepancies of observed variables `cost_obs` and the entire system `cost`. "
    ]
   },
   {
@@ -532,7 +532,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We plot the discrepancies of observed variables `cost_obs` and entire system `cost` as function of hidden variables.  The minimum of `cost` corresponds to the true value of number of hidden variables."
+    "We plot the discrepancies of observed variables `cost_obs` and the entire system `cost` as a function of the number of hidden variables.  The minimum of `cost` corresponds to the true number of hidden variables."
    ]
   },
   {
@@ -567,7 +567,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "So we can infer number of hidden variables based on `cost`."
+    "So we can infer the number of hidden variables based on the minimum of `cost`."
    ]
   }
  ],

@@ -272,8 +272,8 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Results">
 <h1>Results<a class="headerlink" href="#Results" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/nihcompmed/hidden-variable/master?filepath=sphinx%2Fcodesource%2Fhidden.ipynb"><img alt="Binder" src="https://mybinder.org/badge.svg" /></a></p>
-<p>We demonstrade in the following the performance of our method in
-analyzing binary data that is generated from the kinetic Ising model.
+<p>We demonstrate the performance of our method in analyzing binary data
+generated from the kinetic Ising model simulations in the following.
 Using configurations of a subset of variables, we will recover the
 interactions (including observed to observed, hidden to observed,
 observed to hidden, and hidden to hidden), the configurations of hidden
@@ -363,7 +363,7 @@ sucessfully the interactions between variables:</p>
 </div>
 </div>
 <p>We plot the heat map of the actual interaction matrix <code class="docutils literal notranslate"><span class="pre">w0</span></code>, the
-inferred interaction matrix <code class="docutils literal notranslate"><span class="pre">w</span></code>, and the error inference, i.e., the
+inferred interaction matrix <code class="docutils literal notranslate"><span class="pre">w</span></code>, and the error in inference, i.e., the
 discrepancy between <code class="docutils literal notranslate"><span class="pre">w0</span></code> and <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -418,11 +418,11 @@ discrepancy between <code class="docutils literal notranslate"><span class="pre"
 <img alt="../_images/codesource_hidden_11_0.png" src="../_images/codesource_hidden_11_0.png" />
 </div>
 </div>
-<p>However, in the real world data, it is likely that we do not observe the
-configurations of entire system, but only a subset of variables. For
-instance, there exists <code class="docutils literal notranslate"><span class="pre">nh0</span></code> hidden variables. So that, the number of
-observed variables is <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n0</span> <span class="pre">-</span> <span class="pre">nh0</span></code> and the observed configurations
-is <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s0[:,:n]</span></code>.</p>
+<p>However, in the real world, it is likely that we do not observe the
+entire system, but only a subset of variables. For instance, suppose
+that there are <code class="docutils literal notranslate"><span class="pre">nh0</span></code> hidden variables, so the number of observed
+variables is <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n0</span> <span class="pre">-</span> <span class="pre">nh0</span></code> and the observed configurations are
+<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s0[:,:n]</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [7]:
@@ -438,9 +438,9 @@ is <code class="docutils literal notranslate"><span class="pre">s</span> <span c
 <div class="section" id="Ignoring-hidden-variables">
 <h2>Ignoring hidden variables<a class="headerlink" href="#Ignoring-hidden-variables" title="Permalink to this headline">¶</a></h2>
 <p>Let us see what happen if we ignore the existence of hidden variables
-and infer the interactions between the observations. Using the observed
-configurations <code class="docutils literal notranslate"><span class="pre">s</span></code>, we can infer the interactions between the observed
-variables:</p>
+and infer the interactions between the observed variables. Using
+observed configurations <code class="docutils literal notranslate"><span class="pre">s</span></code>, we can try to infer interactions between
+the observed variables:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [8]:
@@ -514,8 +514,8 @@ between them are plotted.</p>
 <img alt="../_images/codesource_hidden_18_0.png" src="../_images/codesource_hidden_18_0.png" />
 </div>
 </div>
-<p>As expected, ignoring hidden variables leads to a poor inferred result.</p>
-<p>In the following, we will take into account the existance of hidden
+<p>As expected, ignoring hidden variables leads to poor coupling inference.</p>
+<p>In the following, we will take into account the existence of hidden
 variables.</p>
 </div>
 <div class="section" id="Including-hidden-variables">
@@ -523,7 +523,7 @@ variables.</p>
 <div class="section" id="Inferring-interactions">
 <h3>Inferring interactions<a class="headerlink" href="#Inferring-interactions" title="Permalink to this headline">¶</a></h3>
 <p>We first assume that the number of hidden variables is known,
-<code class="docutils literal notranslate"><span class="pre">nh</span> <span class="pre">=</span> <span class="pre">nh0</span></code>. The interactions is then inferred by using the function
+<code class="docutils literal notranslate"><span class="pre">nh</span> <span class="pre">=</span> <span class="pre">nh0</span></code>. The interactions are then inferred by using the function
 <code class="docutils literal notranslate"><span class="pre">inference.infer_hidden</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -654,14 +654,14 @@ error between them.</p>
 <img alt="../_images/codesource_hidden_26_0.png" src="../_images/codesource_hidden_26_0.png" />
 </div>
 </div>
-<p>So we can infer accurately the interactions, not only observed to
+<p>So our method infers the interactions accurately, not only observed to
 observed, but also hidden to observed, observed to hidden, and hidden to
 hidden.</p>
 </div>
 <div class="section" id="Inferring-configurations-of-hidden-variables">
 <h3>Inferring configurations of hidden variables<a class="headerlink" href="#Inferring-configurations-of-hidden-variables" title="Permalink to this headline">¶</a></h3>
 <p>Our algorithm allows us to infer the configurations of hidden variables
-simultaneously with the interactions in the previous step. The acurracy
+simultaneously with the interactions in the previous step. The accuracy
 of the inference is calculated as</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -687,11 +687,10 @@ inference accuracy: 95.85 %
 <h3>Inferring number of hidden variables<a class="headerlink" href="#Inferring-number-of-hidden-variables" title="Permalink to this headline">¶</a></h3>
 <p>In the above sections, we recovered the interactions and configurations
 of hidden variables by using the right number of hidden variables,
-<code class="docutils literal notranslate"><span class="pre">nh=</span> <span class="pre">nh0</span></code>. However, in the real world problems, the number of hidden
-variables may not be accessible. In the following, we apply our method
-for various number of hidden variables <code class="docutils literal notranslate"><span class="pre">nh</span></code> and compute the
-discrepancies of observed variables <code class="docutils literal notranslate"><span class="pre">cost_obs</span></code> and entire system
-<code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">nh=</span> <span class="pre">nh0</span></code>. However, in the real world, the number of hidden variables
+may not be available. In the following, we apply our method for various
+number of hidden variables <code class="docutils literal notranslate"><span class="pre">nh</span></code> and compute the discrepancies of
+observed variables <code class="docutils literal notranslate"><span class="pre">cost_obs</span></code> and the entire system <code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [15]:
@@ -715,9 +714,10 @@ discrepancies of observed variables <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 </div>
-<p>We plot the discrepancies of observed variables <code class="docutils literal notranslate"><span class="pre">cost_obs</span></code> and entire
-system <code class="docutils literal notranslate"><span class="pre">cost</span></code> as function of hidden variables. The minimum of <code class="docutils literal notranslate"><span class="pre">cost</span></code>
-corresponds to the true value of number of hidden variables.</p>
+<p>We plot the discrepancies of observed variables <code class="docutils literal notranslate"><span class="pre">cost_obs</span></code> and the
+entire system <code class="docutils literal notranslate"><span class="pre">cost</span></code> as a function of the number of hidden variables.
+The minimum of <code class="docutils literal notranslate"><span class="pre">cost</span></code> corresponds to the true number of hidden
+variables.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
@@ -743,7 +743,8 @@ corresponds to the true value of number of hidden variables.</p>
 <img alt="../_images/codesource_hidden_34_0.png" src="../_images/codesource_hidden_34_0.png" />
 </div>
 </div>
-<p>So we can infer number of hidden variables based on <code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p>
+<p>So we can infer the number of hidden variables based on the minimum of
+<code class="docutils literal notranslate"><span class="pre">cost</span></code>.</p>
 </div>
 </div>
 </div>
